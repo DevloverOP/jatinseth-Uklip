@@ -1,0 +1,15 @@
+
+.cardmodel{
+
+    width:50%;
+    height:auto;
+    border-radius:10px;
+    border:1px solid grey;
+    transition: all 600ms;
+    margin:100px auto;
+    padding: 10px;
+
+}
+.cardmodel:hover{
+    box-shadow:0px 0px 15px 1px whitesmoke;
+}
