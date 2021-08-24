@@ -6,16 +6,23 @@ import Layout from "./components/layout/Layout";
 import Register from "./components/Register/Register";
 import SignIn from "./components/SignIn/SignIn";
 import Starter from "./components/Starter/Starter";
-import {useState, useEffect } from "react";
+import {useEffect, useState } from "react";
+import DataBase from "./components/store/userFile";
 
-
+const DB =new DataBase();
 
 function App() {
   
   const [isSignedIn, setSignIn] = useState(false);
   const [userName, setUserName] = useState();
  
+  useEffect(()=>{
+
+    setSignIn(DB.isAlreadyLoginUser().isLogin)
+   login(DB.isAlreadyLoginUser().user,DB.isAlreadyLoginUser().isLogin)
+  },[DB.isAlreadyLoginUser().isLogin])
   
+
 
   function login(user,isVarified) {
     if (user.length !== 0) {
@@ -63,6 +70,9 @@ function App() {
             </Route>
             <Route path="/login">
               <SignIn login={login} />
+            </Route>
+            <Route>
+              <Starter />
             </Route>
           </Switch>
         </Layout>

@@ -2,28 +2,19 @@ import {useContext, useState,useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
 import classes from "./NavBar.module.css";
 import SeriesContext from '../store/FavouriteContext'
-
+import DataBase from "../store/userFile";
 
 function NavBar(props) {
- 
+  const DB = new DataBase()
   const favctx = useContext(SeriesContext);
   const favbtn = useRef();
   const favs =favctx.totalFavs;
 
-useEffect(()=>{
+  const logout=()=>{
+   props.signout(false)
+    DB.clearStore()
+    }
 
-if(props.showLink){
-console.log("hello",favbtn.current)
-
-window.getComputedStyle(favbtn.current,'::after');
-
-}
-
-},[props])
-
- 
-
-   
   if (props.showLink) {
     return (
       
@@ -45,13 +36,14 @@ window.getComputedStyle(favbtn.current,'::after');
             <li>
               <Link to="/new-series">Add new series</Link>
             </li>
-            <li className={classes.badge} ref={favbtn}>
+            <li ref={favbtn}>
               <Link to="/favourite">Favourites</Link>
+              <span  className={classes.badge}>{favs}</span>
             </li>
           </ul>
         </div>
         <div className={classes.signup}>
-             <Link to="/login" onClick={()=>{props.signout(false)}}>Sign Out</Link>
+         <Link to="/login" onClick={logout}>Sign Out</Link>
           </div>
            </header>
 

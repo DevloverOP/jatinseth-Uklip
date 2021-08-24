@@ -48,11 +48,15 @@ useEffect(()=>{
                 ...res[key]
             });
         } 
+        if(seriesdata[0].id==='error'){
+            throw new Error()
+        }
+        
         setloading(false);
         setdata(seriesdata);
     
     }).catch((err)=>{
-        console.log(err)
+        console.log('errr',err)
         setloading(false);
         setdata(sd);
     });

@@ -42,14 +42,13 @@ li:hover{
     
 }
 
-li.badge::after{
-    content:"0 ";
+li span.badge{
     position: relative;
     top: -10px;
+    padding:3px;
     background-color:red;
+    border-radius:10px;
 }
-
-
 
 .logo a{
   color: red; 

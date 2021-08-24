@@ -1,33 +1,9 @@
 import FormStyle from "../UI/FormStyle";
 import {useHistory, Link} from 'react-router-dom';
 import { useRef} from 'react';
-const users=[
-  {
-     id: "an@gmail.com",
-     name: "Ankit Rawat",
-     password: "1111"
-  },
-  {
-     id: "pk@gmail.com",
-     name: "Prakash Singh",
-     password: "1122"
-  },
-  {
-     id: "ak@gmail.com",
-     name: "Ankush Soni",
-     password: "1105"
-  },
-  {
-     id: "mn@gmail.com",
-     name: "Mohit",
-     password: "1122"
-  },
-  {
-     id: "jatin.handsomehunk@gmail.com",
-     name: "jatin seth",
-     password: "1111"
-  }
-]
+import DataBase from "../store/userFile";
+
+const DB = new DataBase();
 
 function SignIn(props) {
 
@@ -35,28 +11,19 @@ function SignIn(props) {
   const pwd= useRef();
   const history = useHistory();
 
-
-  function local(loguser){
-    const userdata=[];
-    localStorage.clear();
-    if(localStorage.getItem('loggeduser') === null){
-        userdata.push(loguser[0]);
-        localStorage.setItem('loggeduser',JSON.stringify(userdata))
-    }    
-    }
-
 function checkUser(e) {
   e.preventDefault();
   const data = {
     id: id.current.value,
     pass: pwd.current.value,
   };
-  const userAvailable = users.filter((user) => {
+  //checking in database 
+  const userAvailable =DB.getusers().filter((user) => {
     return user.id === data.id && user.password === data.pass;
   });
 
   if (userAvailable.length !== 0) {
-    local(userAvailable);
+    DB.storeUser(userAvailable)
     props.login(userAvailable, true);
     history.replace("/home");
 
