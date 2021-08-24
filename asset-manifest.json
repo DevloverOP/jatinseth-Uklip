@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/jatinseth-Uklip/static/css/main.670eb727.chunk.css",
-    "main.js": "/jatinseth-Uklip/static/js/main.c3052517.chunk.js",
-    "main.js.map": "/jatinseth-Uklip/static/js/main.c3052517.chunk.js.map",
+    "main.css": "/jatinseth-Uklip/static/css/main.5bdf902c.chunk.css",
+    "main.js": "/jatinseth-Uklip/static/js/main.7d3e9c71.chunk.js",
+    "main.js.map": "/jatinseth-Uklip/static/js/main.7d3e9c71.chunk.js.map",
     "runtime-main.js": "/jatinseth-Uklip/static/js/runtime-main.2b59ff7c.js",
     "runtime-main.js.map": "/jatinseth-Uklip/static/js/runtime-main.2b59ff7c.js.map",
-    "static/js/2.ebe0d4b9.chunk.js": "/jatinseth-Uklip/static/js/2.ebe0d4b9.chunk.js",
-    "static/js/2.ebe0d4b9.chunk.js.map": "/jatinseth-Uklip/static/js/2.ebe0d4b9.chunk.js.map",
+    "static/js/2.449cb1ed.chunk.js": "/jatinseth-Uklip/static/js/2.449cb1ed.chunk.js",
+    "static/js/2.449cb1ed.chunk.js.map": "/jatinseth-Uklip/static/js/2.449cb1ed.chunk.js.map",
     "index.html": "/jatinseth-Uklip/index.html",
-    "static/css/main.670eb727.chunk.css.map": "/jatinseth-Uklip/static/css/main.670eb727.chunk.css.map",
-    "static/js/2.ebe0d4b9.chunk.js.LICENSE.txt": "/jatinseth-Uklip/static/js/2.ebe0d4b9.chunk.js.LICENSE.txt",
+    "static/css/main.5bdf902c.chunk.css.map": "/jatinseth-Uklip/static/css/main.5bdf902c.chunk.css.map",
+    "static/js/2.449cb1ed.chunk.js.LICENSE.txt": "/jatinseth-Uklip/static/js/2.449cb1ed.chunk.js.LICENSE.txt",
     "static/media/index.css": "/jatinseth-Uklip/static/media/bg.f57212fb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2b59ff7c.js",
-    "static/js/2.ebe0d4b9.chunk.js",
-    "static/css/main.670eb727.chunk.css",
-    "static/js/main.c3052517.chunk.js"
+    "static/js/2.449cb1ed.chunk.js",
+    "static/css/main.5bdf902c.chunk.css",
+    "static/js/main.7d3e9c71.chunk.js"
   ]
 }
