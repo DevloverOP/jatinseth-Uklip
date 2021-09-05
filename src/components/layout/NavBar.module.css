@@ -21,13 +21,14 @@ a{
 
 
 .signup{
-    font-size:20px;
+    font-size:1.1em;
     padding:8px;
     color: white;
     outline-style: none;
     border-style:none;
     border-radius: 10px;
     background-color:rgb(255, 27, 27);
+    margin-bottom: 3px;
 }
 li{
     list-style-type:none;
@@ -53,7 +54,37 @@ li span.badge{
 .logo a{
   color: red; 
 }
+.logotooltip,
+.logotooltip2{
+    position: relative;
+}
 
+.logotooltip::after,
+.logotooltip2::after{
+    display: none;
+    position: absolute;
+    right: -62px;top:0px;
+    border: 2px solid yellow;
+    background-color:yellow;
+    border-radius: 20px 20px 20px 0px;
+    color:black;
+    padding:0px 2px;
+    font-size: 14px;   
+}
+
+.logotooltip::after{
+    content: "Register";
+}
+.logotooltip2::after{
+    content: "Home";
+    right: -52px;
+}
+
+.logotooltip:hover::after,
+.logotooltip2:hover::after{
+    display: block;
+    
+}
 
 .box{
   margin-bottom: 10px;
@@ -62,8 +93,6 @@ li span.badge{
 .signup:hover{
     background-color:rgb(233, 28, 28);
 }
-
-
 
 
 @media (max-width:650px){
@@ -77,8 +106,8 @@ li span.badge{
         right: 0;
         left: 0;
         width:100%;
-        text-align: center;
-       
+        padding: 5px;
+        text-align: center;       
     }
 
     

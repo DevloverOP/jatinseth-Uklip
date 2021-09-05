@@ -1,69 +1,64 @@
-
-.myform{
-    border: 2px solid rgba(146, 118, 118, 0.39);
-    width: 500px;
-    margin:150px auto;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    background-color:rgba(255, 255, 255, 0.096);
+.myform {
+  border: 2px solid rgba(146, 118, 118, 0.39);
+  width: 500px;
+  margin: 150px auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.096);
+  overflow: hidden;
 }
-   
-.myform:hover{
-transition: all 600ms;
-box-shadow: 0px 0px 10px 1px white;
-}
-   
-.myform  div{
-   margin: 20px;
-   display:flex;
-   justify-content:center;
-   flex-wrap: wrap;
-   font-size: 30px;
-   }
-   
-   .myform div input{
-     border-radius: 10px;
-     border:1px outset;
-     outline-style:none;
-     font-size: 24px;
-     width:100%;
-     padding: 10px;
-     background-color:black;
-     color:white;
-   }
-   
-   :is(.myform div input):focus{
-       border:transparent;
-       box-shadow: 0px 0px 10px 1px skyblue;
 
-   }
-   
-   
-   .myform button{
-       padding:5px 15px;
-       font-size: 20px;
-       background-color:black;
-       border-color:white;
-       color:white;
-       border-radius: 10px;
-       margin: 20px auto 0px;
-       border-style:outset;
-   }
-   .myform  button:hover{
-       background-color:white;
-       color:black;                            
-   }
-   
-   @media all and (max-width:800px){
-       .myform div {
-           flex-flow: column wrap;
-           align-items: center;
-       }
-       .myform div input,textarea{
-           width:100%;
-           margin-top:5px;
-       }
-   }
-     
-   
+.myform:hover {
+  transition: all 600ms;
+  box-shadow: 0px 0px 10px 1px whitesmoke;
+}
+
+.myform div {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 30px;
+}
+
+.myform div input {
+  border-radius: 10px;
+  border: 1px outset;
+  outline-style: none;
+  font-size: 24px;
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+:is(.myform div input):focus {
+  border: transparent;
+  box-shadow: 0px 0px 10px 1px skyblue;
+}
+
+.myform button {
+  padding: 5px 15px;
+  font-size: 20px;
+  background-color: black;
+  border-color: white;
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto 0px;
+  border-style: outset;
+}
+.myform button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width:600px){
+    .myform{
+        width:calc(100% - 50px);
+    }
+ 
+  }
+
+
+

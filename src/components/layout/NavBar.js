@@ -1,29 +1,28 @@
-import {useContext, useState,useRef, useEffect} from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import classes from "./NavBar.module.css";
-import SeriesContext from '../store/FavouriteContext'
+import SeriesContext from "../store/FavouriteContext";
 import DataBase from "../store/userFile";
 
 function NavBar(props) {
-  const DB = new DataBase()
+  const DB = new DataBase();
   const favctx = useContext(SeriesContext);
   const favbtn = useRef();
-  const favs =favctx.totalFavs;
+  const favs = favctx.totalFavs;
 
-  const logout=()=>{
-   props.signout(false)
-    DB.clearStore()
-    }
+  const logout = () => {
+    props.signout(false);
+    DB.clearStore();
+  };
 
   if (props.showLink) {
     return (
-      
       <header className={classes.header}>
-            <div className={classes.logo}>
-              <h1>
-                <Link to="/home">UKlip</Link>
-              </h1>
-            </div>
+        <div className={classes.logo}>
+          <h1>
+            <Link to="/home"className={classes.logotooltip2}>UKlip</Link>
+          </h1>
+        </div>
         <div className={classes.greet}>
           <p>Welcome! {props.user}</p>
         </div>
@@ -38,24 +37,23 @@ function NavBar(props) {
             </li>
             <li ref={favbtn}>
               <Link to="/favourite">Favourites</Link>
-              <span  className={classes.badge}>{favs}</span>
+              <span className={classes.badge}>{favs}</span>
             </li>
           </ul>
         </div>
         <div className={classes.signup}>
-         <Link to="/login" onClick={logout}>Sign Out</Link>
-          </div>
-           </header>
-
+          <Link to="/login" onClick={logout}>
+            Sign Out
+          </Link>
+        </div>
+      </header>
     );
-
-
   } else {
     return (
       <header className={classes.header}>
         <div className={classes.logo}>
           <h1>
-            <Link to="/">UKlip</Link>
+            <Link to="/" className={classes.logotooltip}>UKlip</Link>
           </h1>
         </div>
 
@@ -67,7 +65,6 @@ function NavBar(props) {
       </header>
     );
   }
-
 }
 
 export default NavBar;

@@ -6,10 +6,10 @@ function Favourite(){
     const favourite = useContext(SeriesContext);
 
     return(
-           <div>
+           <>
               <h1>Favourite series</h1>
                 <Series data={favourite.allFavourites}/>
-           </div>
+           </>
     );
 }
 

@@ -1,9 +1,10 @@
 import { useRef } from "react";
-
+import { useHistory } from "react-router";
 import Card from "../UI/Card";
 import classes from "./NewSeriesForm.module.css";
 
 function NewSeriesForm(props) {
+  const history = useHistory();
   const imgurl = useRef("");
   const title = useRef("");
   const desc = useRef("");
@@ -16,6 +17,10 @@ function NewSeriesForm(props) {
       title: title.current.value,
       description: desc.current.value,
     };
+    if(SingleSeries.imgurl==='' || SingleSeries.title==='' || SingleSeries.description===''){
+      alert('No Data Entered.')
+      return;
+    }
     props.onAddSeries(SingleSeries);
     //setting them blank
     imgurl.current.value='';
@@ -36,7 +41,7 @@ function NewSeriesForm(props) {
         </div>
         <div>
           <label htmlFor="desc">Description</label>
-          <textarea id="desc" rows="5" ref={desc}></textarea>
+          <textarea id="desc" rows="3" ref={desc}></textarea>
         </div>
         <div>
           <button onClick={submitHandler}>Add Content</button>

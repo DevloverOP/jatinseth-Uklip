@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import FormStyle from "../UI/FormStyle";
+import DataBase from "../store/userFile";
 
 function Register() {
   const uname = useRef();
@@ -37,8 +38,8 @@ function Register() {
           }
         })
         .catch((err) => {
-          alert(`${err}. Please try again!!`);
-          history.replace("/register");
+          alert(`${err} Error!!.`);
+          history.replace("/");
         });
     } else alert("Details incomplete ");
 

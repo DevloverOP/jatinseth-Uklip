@@ -26,39 +26,26 @@ isAlreadyLoginUser(){
          isLogin:true
       }
    }else return {
-      user:"Guest",
+      user:[{name:"Guest"}],
       isLogin:false
    }
 }
 
 static usersStore(){
- return [
-      {
-         "id": "an@gmail.com",
-         "name": "Ankit Rawat",
-         "password": "1111"
-      },
-      {
-         "id": "pk@gmail.com",
-         "name": "Prakash Singh",
-         "password": "1122"
-      },
-      {
-         "id": "ak@gmail.com",
-         "name": "Ankush Soni",
-         "password": "1105"
-      },
-      {
-         "id": "mn@gmail.com",
-         "name": "Mohit",
-         "password": "1122"
-      },
+   
+   const userDB=[
       {
          "id": "jatin@gmail.com",
          "name": "jatin seth",
-         "password": "1111"
+         "pwd": "1111"
+      },
+      {
+         "id": "guest@gmail.com",
+         "name": "user",
+         "pwd": "0000"
       }
    ]
+ return userDB;
 }
 
 }

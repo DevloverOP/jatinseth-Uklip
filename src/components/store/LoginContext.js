@@ -12,7 +12,7 @@ function LoginContextHandler(props) {
     setlogIn(islogin);
   }
 
-  const context = {
+    const context = {
     logintate: islogIn,
     setlogin: setlogstate,
   };

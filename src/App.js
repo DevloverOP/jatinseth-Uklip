@@ -3,6 +3,7 @@ import Allseries from "./pages/Allseries";
 import Newseries from "./pages/Newseries";
 import Favourite from "./pages/Favourite";
 import Layout from "./components/layout/Layout";
+import Footer from "./components/layout/Footer";
 import Register from "./components/Register/Register";
 import SignIn from "./components/SignIn/SignIn";
 import Starter from "./components/Starter/Starter";
@@ -27,9 +28,9 @@ function App() {
   function login(user,isVarified) {
     if (user.length !== 0) {
     setSignIn(isVarified);
-
-      const name = `${user[0].name}`.substr(0, `${user[0].name}`.indexOf(" "));
-      setUserName(name);
+    user[0].name = (user[0].name)+" "
+    const name = `${user[0].name}`.substr(0, `${user[0].name}`.indexOf(" "));
+    setUserName(name);
     }
   }
 

@@ -11,10 +11,9 @@ const history = useHistory();
         body:JSON.stringify(Singleseries), 
         header:{'Content-Type':'application/json'}  
     }).then(()=>{
-        history.replace('/')
+        history.replace('/home')
        }).catch(err=>{alert(err)});
-
-    }
+}
 
     return(
     <div>

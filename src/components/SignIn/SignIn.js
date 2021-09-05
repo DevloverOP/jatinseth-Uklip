@@ -11,18 +11,31 @@ function SignIn(props) {
   const pwd= useRef();
   const history = useHistory();
 
-function checkUser(e) {
-  e.preventDefault();
+async function checkUser(e) {
+   e.preventDefault();
+
+   let userAvailable=[];
   const data = {
     id: id.current.value,
     pass: pwd.current.value,
   };
-  //checking in database 
-  const userAvailable =DB.getusers().filter((user) => {
-    return user.id === data.id && user.password === data.pass;
-  });
+     try{
+      const req = await fetch(`https://series-259a7-default-rtdb.firebaseio.com/userdb.json/?id=${data.id}`)
+    const res = await req.json()    
+    if(res){
+       userAvailable = (Object.values(res)).filter((user) => {
+        return user.id === data.id && user.pwd === data.pass;
+        });
+       } 
+   }catch(error){
+    console.log('this is error',error)
+      //checking in local database if network err
+      userAvailable = await DB.getusers().filter((user) => {
+        return user.id === data.id && user.pwd === data.pass;
+      });
+   }
 
-  if (userAvailable.length !== 0) {
+   if (userAvailable.length !== 0) {
     DB.storeUser(userAvailable)
     props.login(userAvailable, true);
     history.replace("/home");
